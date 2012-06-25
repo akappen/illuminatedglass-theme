@@ -8,7 +8,7 @@ To install the theme in grokphoto:
 
 Add the gem to the Gemfile:
 
-    gem 'illuminatedglass-theme', git: 'https://github.com/akappen/illuminatedglass-theme.git'
+    gem 'illuminatedglass-theme', git: 'git://github.com/akappen/illuminatedglass-theme.git'
 
 
 Run bundler to install the gems.
