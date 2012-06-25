@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = IlluminatedglassTheme::VERSION
   s.authors     = ["Andrew Kappen"]
   s.email       = ["akappen@gmail.com"]
-  s.homepage    = "www.illuminatedglass.com"
+  s.homepage    = "http://www.illuminatedglass.com"
   s.summary     = "Grokphoto theme for www.illuminatedglass.com"
   s.description = "Theme for grokphoto used on the www.illuminatedglass.com website."
 
