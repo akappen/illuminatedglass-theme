@@ -11,7 +11,7 @@
         .container
           %ul.nav
             - is_main_active = false
-            - galleries.slice!(0, 6).each do |gallery|
+            - galleries.slice!(0, 5).each do |gallery|
               - maybe_active = (defined?(@gallery) and @gallery.id == gallery.id ? 'active' : '')
               - is_main_active ||= (maybe_active == 'active')
               %li{ :class => maybe_active }= link_to(gallery.name, gallery_path(gallery))
