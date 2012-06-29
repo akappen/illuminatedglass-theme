@@ -4,7 +4,7 @@
       .span12
         .row
           .span2
-            %h4 Photo Galleries
+            %h4 Galleries
             %ul.unstyled
               - galleries.each do |gallery|
                 %li= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
