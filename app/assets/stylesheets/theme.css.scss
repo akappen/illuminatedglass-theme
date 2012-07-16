@@ -1,17 +1,59 @@
 // custom theme over-rides go here
 
+// Welcome header
+.jumbotron.masthead .inner {
+  h1 {
+    background-image: url(/assets/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -3000px;
+    height: 60px;
+    width: 100%;
+    overflow:hidden;
+  }
+  p {
+    color: #333;
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    top: -0.6em;
+  }
+}
+
 // center homepage carousel images horizontally
 #carousel {
   text-align: center;
 }
 
+// Welcome gallery list
+.gallery-list {
+  color: #333;
+  h2 {
+    border-bottom: 2px solid #333;
+  }
+  ul {
+    li {
+      font-size: 1.2em;
+      line-height: 1.6em;
+      a, a:hover, a:visited {
+        color: #333;
+      }
+    }
+  }
+}
+
+// Welcome marketing gallery
+.marketing {
+  margin-top: 60px;
+}
+
 // allow gallery thumbs to be any aspect ratio
 .thumbnails {
+  text-align: center;
   li {
     height: 183px;
-    text-align: center;
   }
-  a {
+  .thumbnail {
     display: inline-block;
   }
   img {

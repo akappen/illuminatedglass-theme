@@ -3,18 +3,23 @@
     %h1= photographer.name
     %p= photographer.tagline
 .row
-  .span12
+  .span9
     #carousel.carousel
       .carousel-inner
         - @galleries.each_with_index do |gallery, idx|
           %div{ :class => "item#{' active' if idx == 0}" }
-            = link_to( image_tag(gallery.cover.thumb('940x500').url), gallery_path(gallery) )
+            = link_to(image_tag(gallery.cover.thumb('700x500').url), gallery_path(gallery))
+  .span3.gallery-list
+    .well
+      %h2 Galleries
+      %ul.unstyled
+        - galleries.each do |gallery|
+          %li= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
 
-.marketing
+.marketing.thumbnails
   - @galleries.each_slice(3) do |galleries|
     .row
       - galleries.each do |gallery|
         .span4
-          %h2= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
-          %p= gallery.description
-          %p= link_to('View this gallery &raquo;'.html_safe, gallery_path(gallery), :class => 'btn')
+          = link_to(image_tag(gallery.cover.thumb('260x173').url), gallery_path(gallery), :class => "thumbnail")
+          %h3= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
