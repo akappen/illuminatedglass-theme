@@ -1,22 +1,31 @@
 // custom theme over-rides go here
 
 // Welcome header
-.jumbotron.masthead .inner {
-  h1 {
-    background-image: url(/assets/logo.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    text-indent: -3000px;
-    height: 60px;
-    width: 100%;
-    overflow:hidden;
-  }
-  p {
-    color: #333;
-    font-style: italic;
-    font-weight: bold;
-    position: relative;
-    top: -0.6em;
+body.splash {
+  background-image: url(/assets/header_bg.jpg);
+  background-repeat: repeat-x;
+  background-position: center top;
+  padding-top: 22px;
+  .jumbotron.masthead {
+    margin-bottom: 48px;
+    .inner {
+      h1 {
+        background-image: url(/assets/logo.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-indent: -3000px;
+        height: 60px;
+        width: 100%;
+        overflow:hidden;
+      }
+      p {
+        color: #333;
+        font-style: italic;
+        font-weight: bold;
+        position: relative;
+        top: -0.6em;
+      }
+    }
   }
 }
 
