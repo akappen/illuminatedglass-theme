@@ -22,7 +22,7 @@
                   %b.caret
                 %ul.dropdown-menu
                   - galleries.slice(5,galleries.length).each do |gallery|
-                    %li{ :class => (defined?(@gallery) and @gallery.id == gallery.id ? 'active' : '') }= link_to(gallery.name, gallery_path(gallery))
+                    %li{ :class => (defined?(@gallery) and @gallery.id == gallery.id ? 'active' : '') }= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
             -# - pages.each do |page|
             -#   %li{ :class => (defined?(@page) and @page.id == page.id ? 'active' : '') }= link_to(page.name, page_path(page))
             -# %li{ :class => controller.controller_name == 'posts' ? 'active' : '' }= link_to('Blog', photographer.blog_url.blank? ? posts_path : photographer.blog_url)

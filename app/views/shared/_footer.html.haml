@@ -5,11 +5,11 @@
         .row
           - unless controller.controller_name == 'home'
             - galleries.each_slice((galleries.length/2.0).ceil).with_index do |gallery_slice, i|
-              .span2
+              .span3
                 %h4= (i == 0 ? 'Galleries' : '&nbsp;').html_safe
                 %ul.unstyled
                   - gallery_slice.each do |gallery|
-                    %li= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
+                    %li= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery), :title => gallery.name)
           -# .span2
           -#   %h4 Company Info
           -#   %ul.unstyled

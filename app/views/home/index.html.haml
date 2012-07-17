@@ -14,7 +14,7 @@
       %h2 Galleries
       %ul.unstyled
         - galleries.each do |gallery|
-          %li= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
+          %li= link_to(truncate(gallery.name, :length => 26), gallery_path(gallery), :title => gallery.name)
 
 .marketing.thumbnails
   - @galleries.each_slice(3) do |galleries|
