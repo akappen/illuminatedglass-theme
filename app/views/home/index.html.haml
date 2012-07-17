@@ -8,7 +8,7 @@
       .carousel-inner
         - @galleries.each_with_index do |gallery, idx|
           %div{ :class => "item#{' active' if idx == 0}" }
-            = link_to(image_tag(gallery.cover.thumb('700x500').url), gallery_path(gallery))
+            = link_to(image_tag(gallery.cover.thumb('700x500').url, :class => 'thumbnail'), gallery_path(gallery))
   .span3.gallery-list
     .well
       %h2 Galleries
