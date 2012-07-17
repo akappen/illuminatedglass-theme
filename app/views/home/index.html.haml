@@ -10,11 +10,10 @@
           %div{ :class => "item#{' active' if idx == 0}" }
             = link_to(image_tag(gallery.cover.thumb('700x500').url, :class => 'thumbnail'), gallery_path(gallery))
   .span3.gallery-list
-    .well
-      %h2 Galleries
-      %ul.unstyled
-        - galleries.each do |gallery|
-          %li= link_to(truncate(gallery.name, :length => 26), gallery_path(gallery), :title => gallery.name)
+    %h2 Galleries
+    %ul.unstyled
+      - galleries.each do |gallery|
+        %li= link_to(gallery.name, gallery_path(gallery))
 
 .marketing.thumbnails
   - @galleries.each_slice(3) do |galleries|
@@ -22,4 +21,4 @@
       - galleries.each do |gallery|
         .span4
           = link_to(image_tag(gallery.cover.thumb('260x173').url), gallery_path(gallery), :class => "thumbnail")
-          %h3= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
+          %h4= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')
