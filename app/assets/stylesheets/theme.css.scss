@@ -5,25 +5,21 @@ body.splash {
   background-image: url(/assets/header_bg.jpg);
   background-repeat: repeat-x;
   background-position: center top;
-  padding-top: 22px;
   .jumbotron.masthead {
-    margin-bottom: 48px;
+    margin-bottom: 0px;
     .inner {
       h1 {
         background-image: url(/assets/logo.png);
         background-repeat: no-repeat;
         background-position: center;
         text-indent: -3000px;
-        height: 60px;
+        margin-top: -50px;
+        height: 150px;
         width: 100%;
         overflow:hidden;
       }
       p {
-        color: #333;
-        font-style: italic;
-        font-weight: bold;
-        position: relative;
-        top: -0.6em;
+        text-indent: -3000px;
       }
     }
   }
@@ -37,26 +33,6 @@ body.splash {
       display: block;
       .thumbnail {
         margin: 0 auto;
-      }
-    }
-  }
-}
-
-// Welcome gallery list
-.gallery-list {
-  color: #333;
-  h2 {
-    border-bottom: 2px solid #333;
-  }
-  ul {
-    padding-top: 8px;
-    padding-left: 28px;
-    text-indent: -28px;
-    li {
-      font-size: 1.2em;
-      line-height: 1.6em;
-      a, a:hover, a:visited {
-        color: #333;
       }
     }
   }
