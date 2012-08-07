@@ -1,4 +1,5 @@
 - content_for :title, @gallery.name
+- content_for :page_title, @gallery.name
 
 %ul.thumbnails
   - @gallery.photos.each_slice(4) do |photos|
