@@ -24,7 +24,7 @@
           -#         %li= link_to(truncate(post.title, :length => 32), post_path(post))
 
           .span5.pull-right
-            %p= photographer.description
+            %p= (@gallery && !@gallery.description.blank?) ? @gallery.description : photographer.description
   #footer-floor
     .container
       .row
