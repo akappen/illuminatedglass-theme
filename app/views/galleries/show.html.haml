@@ -1,8 +1,8 @@
 - content_for :title, @gallery.name
 - content_for :page_title, @gallery.name
 
-%ul.thumbnails
-  - @gallery.photos.each_slice(4) do |photos|
+- @gallery.photos.each_slice(4) do |photos|
+  %ul.thumbnails.row
     - photos.each do |photo|
       %li.span3
-        = link_to(image_tag(photo.photo.thumb('260x173').url), photo.photo.url, :class => "thumbnail", :rel => 'lightbox')
+        = link_to(image_tag(photo.photo.thumb('210x173').url), photo.photo.url, :class => "thumbnail", :rel => 'lightbox')
