@@ -7,8 +7,8 @@ class OrganizedGalleries
       ]
     elsif Rails.env.development?
       [
-       ['Foo', [1, 2, 3]],
-       ['Bar', [1, 2, 3]]
+       ['Foo', (1..20).to_a],
+       ['Bar', (1..20).to_a]
       ]
     else
       []
