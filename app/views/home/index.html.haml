@@ -9,11 +9,3 @@
         - @galleries.reverse.each_with_index do |gallery, idx|
           %div{ :class => "item#{' active' if idx == 0}" }
             = link_to(image_tag(gallery.cover.thumb('940x500').url, :class => 'thumbnail'), gallery_path(gallery))
-
-.marketing.thumbnails
-  - @galleries.reverse.each_slice(3) do |galleries|
-    .row
-      - galleries.each do |gallery|
-        .span4
-          = link_to(image_tag(gallery.cover.thumb('260x173').url), gallery_path(gallery), :class => "thumbnail")
-          %h4= link_to(gallery.name, gallery_path(gallery), :class => 'marketing-link')

@@ -11,25 +11,24 @@
       .navbar-inner
         .container
           %ul.nav
-            -# - is_main_active = false
-            -# - galleries.slice(0, 5).each do |gallery|
-            -#   - maybe_active = (defined?(@gallery) and @gallery.id == gallery.id ? 'active' : '')
-            -#   - is_main_active ||= (maybe_active == 'active')
-            -#   %li{ :class => maybe_active }= link_to(gallery.name, gallery_path(gallery))
-            -# - if galleries.length > 0
-            -#   %li.dropdown{ :class => (is_main_active ? '' : 'active') }
-            -#     %a.dropdown-toggle{:href => '#', :'data-toggle' => 'dropdown'}
-            -#       More
-            -#       %b.caret
-            -#     %ul.dropdown-menu
-            -#       - galleries.slice(5,galleries.length).each do |gallery|
-            -#         %li{ :class => (defined?(@gallery) and @gallery.id == gallery.id ? 'active' : '') }= link_to(truncate(gallery.name, :length => 32), gallery_path(gallery))
-            -# - pages.each do |page|
-            -#   %li{ :class => (defined?(@page) and @page.id == page.id ? 'active' : '') }= link_to(page.name, page_path(page))
-            -# %li{ :class => controller.controller_name == 'posts' ? 'active' : '' }= link_to('Blog', photographer.blog_url.blank? ? posts_path : photographer.blog_url)
-            -# %li.divider-vertical
-            -# %li{ :class => controller.controller_name == 'contact_requests' ? 'active' : '' }= link_to('Contact', new_contact_request_path)
+            - OrganizedGalleries.organization.each do |og|
+              %li.dropdown
+                %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}
+                  = og.first
+                  %b.caret
+                %ul.dropdown-menu
+                  - og.last.each do |g|
+                    %li
+                      = link_to(g.name, gallery_path(g))
+
           .pull-right= link_to(photographer.name, root_path, :class => 'brand')
+    :javascript
+      //Add Hover effect to menus
+      jQuery('ul.nav li.dropdown').hover(function() {
+        jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
+      }, function() {
+        jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
+      });
     .container
       - if notice
         .alert.alert-block{ :'data-dismiss' => 'alert' }

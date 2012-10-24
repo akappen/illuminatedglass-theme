@@ -3,28 +3,36 @@
     .row
       .span12
         .row
-          - unless controller.controller_name == 'home'
-            - galleries.reverse.each_slice((galleries.length/2.0).ceil).with_index do |gallery_slice, i|
-              .span3
-                %h4= (i == 0 ? 'Galleries' : '&nbsp;').html_safe
-                %ul.unstyled
-                  - gallery_slice.each do |gallery|
-                    %li= link_to(truncate(gallery.name, :length => 40), gallery_path(gallery), :title => gallery.name)
-          -# .span2
-          -#   %h4 Company Info
-          -#   %ul.unstyled
-          -#     - pages.each do |page|
-          -#       %li= link_to(truncate(page.name, :length => 32), page_path(page))
-          -#     %li= link_to('Contact', new_contact_request_path)
-          -# .span3
-          -#   - if photographer.blog_url.blank?
-          -#     %h4 Recent Posts
-          -#     %ul.unstyled
-          -#       - recent_posts.each do |post|
-          -#         %li= link_to(truncate(post.title, :length => 32), post_path(post))
-
+          .span7
+            - if controller.controller_name == 'home'
+              %h4
+                Galleries
+              %div.btn-toolbar
+                - OrganizedGalleries.organization.each do |og|
+                  %div.btn-group.dropup
+                    %button.btn.btn-large.btn-inverse.dropdown-toggle
+                      = og.first
+                      %span.caret
+                    %ul.dropdown-menu
+                      - og.last.each do |g|
+                        %li
+                          = link_to(g.name, gallery_path(g))
+  
           .span5.pull-right
             %p= (@gallery && !@gallery.description.blank?) ? @gallery.description : photographer.description
+    :javascript
+      //Add Hover effect to menus
+      jQuery('button.btn.dropdown-toggle').hover(function() {
+        jQuery(this).parent().find('.dropdown-menu').stop(true, true).delay(100).fadeIn(100);
+      }, function() {
+        jQuery(this).parent().find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
+      });
+      jQuery('ul.dropdown-menu').hover(function() {
+        jQuery(this).stop(true, true).delay(100).fadeIn(100);
+      }, function() {
+        jQuery(this).stop(true, true).delay(100).fadeOut(100);
+      });
+
   #footer-floor
     .container
       .row
