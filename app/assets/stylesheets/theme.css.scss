@@ -5,6 +5,15 @@ body.splash {
   background-image: url(/assets/header_bg.jpg);
   background-repeat: repeat-x;
   background-position: center top;
+  .container {
+    width: 1024px;
+    .span12 {
+      width: 1024px;
+    }
+  }
+  footer {
+    min-width: 1024px;
+  }
   .jumbotron.masthead {
     margin-bottom: 0px;
     .inner {
@@ -52,12 +61,13 @@ body.splash {
   }
 }
 
-// footer links
+// footer
 footer {
   a:hover {
     color: #6b6b6b;
     text-decoration: none;
   }
+  min-width: 940px; // fixes footer when horizontal scrolling
 }
 
 // btn-inverse from bootstrap 2.0
