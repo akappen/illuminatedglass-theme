@@ -2,8 +2,8 @@ class OrganizedGalleries
   @organization =
     if Rails.env.production?
       [
-       ['Goblets', [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9]],
-       ['Sculpture', [23, 27, 26, 25, 22, 21, 18, 13, 4, 3]]
+       ['Goblets', [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9, 29]],
+       ['Sculpture', [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31]]
       ]
     elsif Rails.env.development?
       [
@@ -19,6 +19,10 @@ class OrganizedGalleries
   end
 end
 
+# /galleries/31-giant-squid-vs-whale
+# /galleries/30-sea-octopus-8th-of-a-series
+# /galleries/29-morning-rose
+# /galleries/28-rose-vine
 # /galleries/27-turtle-vs-octopus
 # /galleries/26-lakeside
 # /galleries/25-small-pond
