@@ -6,6 +6,6 @@
   .span12
     #carousel.carousel
       .carousel-inner
-        - @galleries.reverse.each_with_index do |gallery, idx|
+        - galleries.reverse.each_with_index do |gallery, idx|
           %div{ :class => "item#{' active' if idx == 0}" }
             = link_to(image_tag(gallery.cover.thumb('940x500').url, :class => 'thumbnail'), gallery_path(gallery))
