@@ -17,9 +17,9 @@
                       - og.last.each do |g|
                         %li
                           = link_to(g.name, gallery_path(g))
-  
+
           .span5.pull-right
-            %p= (@gallery && !@gallery.description.blank?) ? @gallery.description : photographer.description
+            %p= photographer.description
     :javascript
       //Add Hover effect to menus
       jQuery('button.btn.dropdown-toggle').hover(function() {
@@ -39,9 +39,9 @@
         .span12
           %h4
             - unless photographer.phone.blank?
-              = enkode(photographer.phone)
+              = photographer.phone
               \/
-            = enkode_mail(photographer.email, photographer.email)
+            = mail_to(photographer.email)
           %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
 
 - unless photographer.google_analytics_key.blank?
