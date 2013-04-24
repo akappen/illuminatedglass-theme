@@ -1,7 +1,7 @@
 !!!
 %html{ 'class' => 'no-js', :lang => 'en' }
   %head
-    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | #{photographer.name}"
+    %title= "#{yield(:meta_title).presence || yield(:page_title).presence || 'Home'}  | #{photographer.name} Administration"
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -29,7 +29,7 @@
       }, function() {
         jQuery(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(100);
       });
-    .container
+    .container#content
       - if notice
         .alert.alert-block{ :'data-dismiss' => 'alert' }
           %a.close ×
