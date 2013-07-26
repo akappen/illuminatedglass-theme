@@ -3,7 +3,7 @@ class OrganizedGalleries
     if Rails.env.production?
       [
        ['Goblets', [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9, 29, 33, 34, 35]],
-       ['Sculpture', [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32]]
+       ['Sculpture', [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32, 36, 37, 38, 39, 40]]
       ]
     elsif Rails.env.development?
       [
@@ -19,6 +19,12 @@ class OrganizedGalleries
   end
 end
 
+
+# /galleries/40-seascape-collaborative-series-number-2
+# /galleries/39-comet-series-number-2
+# /galleries/38-seascape-collaborative-series-number-1
+# /galleries/37-comet-series-number-1
+# /galleries/36-deep-sea-glow
 # /galleries/35-sea-otter-with-kelp
 # /galleries/34-manta-ray-with-kelp
 # /galleries/33-morning-poppy
