@@ -19,7 +19,7 @@
                           = link_to(g.name, gallery_path(g))
 
           .span5.pull-right
-            %p= photographer.description
+            %p= (@gallery && @gallery.description.present?) ? @gallery.description : photographer.description
     :javascript
       //Add Hover effect to menus
       jQuery('button.btn.dropdown-toggle').hover(function() {
