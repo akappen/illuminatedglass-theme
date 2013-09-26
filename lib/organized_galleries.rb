@@ -1,9 +1,19 @@
 class OrganizedGalleries
   @organization =
     if Rails.env.production?
+      if goblets_env = ENV['CATEGORY_GOBLETS']
+        goblet_ids = goblets_env.split(',')
+      else
+        goblet_ids = [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9, 29, 33, 34, 35]
+      end
+      if sculpture_env = ENV['CATEGORY_SCULPTURE']
+        sculpture_ids = sculpture_env.split(',')
+      else
+        sculpture_ids = [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+      end
       [
-       ['Goblets', [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9, 29, 33, 34, 35]],
-       ['Sculpture', [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32, 36, 37, 38, 39, 40]]
+       ['Goblets', goblet_ids],
+       ['Sculpture', sculpture_ids]
       ]
     elsif Rails.env.development?
       [
@@ -19,7 +29,10 @@ class OrganizedGalleries
   end
 end
 
-
+# /galleries/44-wetlands-collaboration-1
+# /galleries/43-sea-monster-vs-submarine
+# /galleries/42-seascape-collaboration-3
+# /galleries/41-sea-octopus-9th-of-a-series
 # /galleries/40-seascape-collaborative-series-number-2
 # /galleries/39-comet-series-number-2
 # /galleries/38-seascape-collaborative-series-number-1
