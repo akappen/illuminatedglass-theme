@@ -5,4 +5,4 @@
   %ul.thumbnails.row
     - photos.each do |photo|
       %li.span3
-        = link_to(image_tag(photo.photo.thumb('210x173').url), photo.photo.remote_url, :class => "thumbnail", :rel => 'lightbox')
+        = link_to(image_tag(photo.photo.thumb('210x173').url), photo.photo.url, :class => "thumbnail", :rel => 'lightbox')
