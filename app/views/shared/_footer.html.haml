@@ -42,6 +42,8 @@
               = photographer.phone
               \/
             = mail_to(photographer.email)
+            \/
+            = mail_to('brad@illuminatedglass.com')
           %p= "&copy; #{Time.now.year}, #{photographer.name}, All Rights Reserved".html_safe
 
 - unless photographer.google_analytics_key.blank?
