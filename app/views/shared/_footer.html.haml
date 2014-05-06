@@ -1,25 +1,9 @@
 %footer
   .container
     .row
-      .span12
-        .row
-          .span7
-            - if controller.controller_name == 'home'
-              %h4
-                Galleries
-              %div.btn-toolbar
-                - OrganizedGalleries.organization.each do |og|
-                  %div.btn-group.dropup
-                    %button.btn.btn-large.btn-inverse.dropdown-toggle
-                      = og.first
-                      %span.caret
-                    %ul.dropdown-menu
-                      - og.last.each do |g|
-                        %li
-                          = link_to(g.name, gallery_path(g))
-
-          .span5.pull-right
-            %p= (@gallery && @gallery.description.present?) ? @gallery.description : photographer.description
+      .span7
+      .span5.pull-right
+        %p= (@gallery && @gallery.description.present?) ? @gallery.description : photographer.description
     :javascript
       //Add Hover effect to menus
       jQuery('button.btn.dropdown-toggle').hover(function() {

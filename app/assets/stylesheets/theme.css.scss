@@ -32,6 +32,10 @@ body.splash {
       }
     }
   }
+  .mininav {
+    position: absolute;
+    top: 100px;
+  }
 }
 
 // center homepage carousel images horizontally
@@ -109,23 +113,4 @@ footer {
 .btn-inverse .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
-}
-
-// drop-up menu
-.dropup {
-  position: relative;
-}
-.dropup .caret {
-  border-top: 0;
-  border-bottom: 4px solid #000000;
-  content: "";
-}
-.dropup .dropdown-menu {
-  top: auto;
-  bottom: 100%;
-  margin-bottom: 1px;
-}
-.dropup .btn-large .caret {
-  border-top: 0;
-  border-bottom: 5px solid #000000;
 }
