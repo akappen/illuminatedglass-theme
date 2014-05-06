@@ -11,14 +11,21 @@ class OrganizedGalleries
       else
         sculpture_ids = [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44]
       end
+      if art_pipe_env = ENV['CATEGORY_ART_PIPE']
+        art_pipe_ids = art_pipe_env.split(',')
+      else
+        art_pipe_ids = [45, 46, 47, 48, 49, 50, 51, 52, 53]
+      end
       [
        ['Goblets', goblet_ids],
-       ['Sculpture', sculpture_ids]
+       ['Sculpture', sculpture_ids],
+       ['Art Pipes', art_pipe_ids]
       ]
     elsif Rails.env.development?
       [
        ['Foo', (1..20).to_a],
-       ['Bar', (1..20).to_a]
+       ['Bar', (1..20).to_a],
+       ['Baz', (1..20).to_a]
       ]
     else
       []
