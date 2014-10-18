@@ -1,15 +1,15 @@
 class OrganizedGalleries
   @organization =
     if Rails.env.production?
-      if goblets_env = ENV['CATEGORY_GOBLETS']
-        goblet_ids = goblets_env.split(',')
+      if vessels_env = ENV['CATEGORY_VESSELS']
+        vessel_ids = vessels_env.split(',')
       else
-        goblet_ids = [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9, 29, 33, 34, 35]
+        vessel_ids = [24, 20, 12, 19, 17, 8, 16, 7, 15, 14, 11, 10, 9, 29, 33, 34, 35, 59, 60, 57]
       end
       if sculpture_env = ENV['CATEGORY_SCULPTURE']
         sculpture_ids = sculpture_env.split(',')
       else
-        sculpture_ids = [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44]
+        sculpture_ids = [23, 27, 26, 25, 22, 21, 18, 13, 4, 3, 28, 30, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44, 54, 61, 55, 56, 62, 58, 63, 64, 65, 66]
       end
       if art_pipe_env = ENV['CATEGORY_ART_PIPE']
         art_pipe_ids = art_pipe_env.split(',')
@@ -17,7 +17,7 @@ class OrganizedGalleries
         art_pipe_ids = [45, 46, 47, 48, 49, 50, 51, 52, 53]
       end
       [
-       ['Goblets', goblet_ids],
+       ['Vessels', vessel_ids],
        ['Sculpture', sculpture_ids],
        ['Art Pipes', art_pipe_ids]
       ]
