@@ -38,6 +38,15 @@ body.splash {
   }
 }
 
+// navbars use lighter font
+.navbar .nav > li > a {
+  color: #ddd;
+}
+.navbar .caret {
+  border-top: 4px solid #ddd;
+  opacity: 0.6;
+}
+
 // center homepage carousel images horizontally
 #carousel {
   .item {
