@@ -7,15 +7,6 @@
     .navbar
       .navbar-inner
         %ul.nav
-          - OrganizedGalleries.organization.each do |og|
-            %li.dropdown
-              %a.dropdown-toggle{:href=>"#", "data-toggle"=>"dropdown"}
-                = og.first
-                %b.caret
-              %ul.dropdown-menu
-                - og.last.each do |g|
-                  %li
-                    = link_to(g.name, gallery_path(g))
           - pages.each do |page|
             %li{ :class => (defined?(@page) and @page.id == page.id ? 'active' : '') }= link_to(page.name, page_path(page))
 :javascript
