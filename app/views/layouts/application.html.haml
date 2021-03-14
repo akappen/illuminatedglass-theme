@@ -27,11 +27,11 @@
         .alert.alert-block{ :'data-dismiss' => 'alert' }
           %a.close ×
           %p= notice
-      - if content_for?(:title)
-        .page-header
-          %h1= yield(:title)
-          - if content_for?(:subtitle)
-            %p.subtitle= yield(:subtitle)
+      -#- if content_for?(:title)
+      -#  .page-header
+      -#    %h1= yield(:title)
+      -#    - if content_for?(:subtitle)
+      -#      %p.subtitle= yield(:subtitle)
       .row.content
         - if content_for?(:sidebar)
           .span3
